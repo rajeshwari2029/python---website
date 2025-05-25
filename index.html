@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Syntax Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #4b8bbe;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
+    }
+    nav button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #4b8bbe;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    nav button:hover {
+      background: #366eaa;
+    }
+    .section {
+      display: none;
+      padding: 1rem 2rem;
+    }
+    .active {
+      display: block;
+    }
+    .code-block {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre;
+      margin-top: 1rem;
+    }
+    .highlight {
+      background: yellow;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Learn Python: Indentation, Syntax & Comments</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('intro')">Introduction</button>
+    <button onclick="showSection('indentation')">Indentation</button>
+    <button onclick="showSection('syntax')">Syntax</button>
+    <button onclick="showSection('comments')">Comments</button>
+  </nav>
+
+  <div id="intro" class="section active">
+    <h2>Welcome</h2>
+    <p>This website teaches you the basics of Python's indentation, syntax, and how to write comments.</p>
+  </div>
+
+  <div id="indentation" class="section">
+    <h2>Indentation in Python</h2>
+    <p>Indentation is crucial in Python. It defines blocks of code and replaces braces used in other languages.</p>
+    <div class="code-block" onclick="highlight(this)">
+      def greet():
+          print("Hello, World!")
+          if True:
+              print("Indented block")
+    </div>
+  </div>
+
+  <div id="syntax" class="section">
+    <h2>Basic Python Syntax</h2>
+    <p>Python is known for its clear and readable syntax. Statements end with a newline.</p>
+    <div class="code-block">
+      x = 10
+      y = 20
+      sum = x + y
+      print(sum)
+    </div>
+  </div>
+
+  <div id="comments" class="section">
+    <h2>Comments in Python</h2>
+    <p>Comments start with a <code>#</code> symbol and extend to the end of the line.</p>
+    <div class="code-block">
+      # This is a single-line comment
+      print("Hello")  # Inline comment
+
+      '''
+      This is a
+      multi-line comment (using triple quotes)
+      '''
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    function highlight(elem) {
+      elem.classList.toggle('highlight');
+    }
+  </script>
+</body>
+</html>
